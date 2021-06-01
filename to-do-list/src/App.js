@@ -29,6 +29,15 @@ class App extends React.Component {
     this.setState({ content: event.target.value });
   };
 
+  onAddPress = () => {
+    const newElement = { title: this.state.title, content: this.state.content };
+    this.setState({
+      toDoList: [...this.state.toDoList, newElement],
+      title: "",
+      content: "",
+    });
+  };
+
   render() {
     console.log(this.state);
     return (
@@ -48,7 +57,7 @@ class App extends React.Component {
               <input
                 type="text"
                 name="name"
-                title={this.state.value}
+                value={this.state.title}
                 onChange={this.onTitleChange}
               />
             </label>
@@ -56,11 +65,11 @@ class App extends React.Component {
             <label>
               Treść
               <textarea
-                content={this.state.value}
+                value={this.state.content}
                 onChange={this.onContentChange}
               ></textarea>
             </label>
-            <button> Dodaj </button>
+            <button onClick={this.onAddPress}> Dodaj </button>
           </div>
         </div>
       </div>
