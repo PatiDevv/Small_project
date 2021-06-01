@@ -1,8 +1,7 @@
-import { title } from "process";
 import React from "react";
-import { isTemplateSpan } from "typescript";
 import "./App.css";
-import ListItem from "./ListItem";
+import { TrashOutline } from "react-ionicons";
+import "./ListItem.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -38,15 +37,37 @@ class App extends React.Component {
     });
   };
 
+  onDeletePress = (listItem) => {
+    this.setState({
+      toDoList: this.state.toDoList.filter(
+        (x) => x.content != listItem.content
+      ),
+    });
+  };
+
   render() {
-    console.log(this.state);
     return (
       <div className="wrapper">
         <div className="list">
           <h1>Moja lista rzeczy do zrobienia</h1>
-          {this.state.toDoList.map((listItem) => (
-            <ListItem title={listItem.title} content={listItem.content} />
-          ))}
+
+          {this.state.toDoList.length > 0 ? (
+            this.state.toDoList.map((listItem) => (
+              <li className="listItem">
+                <input type="checkbox"></input>
+                <div className="title"> {listItem.title} </div>
+                <div className="content"> {listItem.content} </div>
+                <TrashOutline
+                  onClick={() => this.onDeletePress(listItem)}
+                  color={"#00000"}
+                  height="25px"
+                  width="25px"
+                />
+              </li>
+            ))
+          ) : (
+            <>Brak zdań na dziś! </>
+          )}
         </div>
 
         <div className="form">
