@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import { TrashOutline } from "react-ionicons";
 import "./ListItem.css";
+import ListItem from "./ListItem";
 
 class App extends React.Component {
   constructor(props) {
@@ -52,18 +52,12 @@ class App extends React.Component {
           <h1>Moja lista rzeczy do zrobienia</h1>
 
           {this.state.toDoList.length > 0 ? (
-            this.state.toDoList.map((listItem) => (
-              <li className="listItem">
-                <input type="checkbox"></input>
-                <div className="title"> {listItem.title} </div>
-                <div className="content"> {listItem.content} </div>
-                <TrashOutline
-                  onClick={() => this.onDeletePress(listItem)}
-                  color={"#00000"}
-                  height="25px"
-                  width="25px"
-                />
-              </li>
+            this.state.toDoList.map((listItem, index) => (
+              <ListItem
+                key={index}
+                content={listItem.content}
+                title={listItem.title}
+              />
             ))
           ) : (
             <>Brak zdań na dziś! </>
