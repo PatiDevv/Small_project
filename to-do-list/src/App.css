@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.list {
+  background-color: aqua;
+  width: 50%;
+}
+
+.form {
+  background-color: blue;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
