@@ -1,6 +1,8 @@
 import "./App.css";
 import React from "react";
 import { TrashOutline, PencilOutline, SaveOutline } from "react-ionicons";
+import "antd/dist/antd.css";
+import { Input, Button, Divider, Col, Row } from "antd";
 
 class App extends React.Component {
   constructor(props) {
@@ -92,15 +94,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="list">
+      <Row>
+        <Col span={16}>
           <h1>Lista książek do przeczytania</h1>
 
-          <div className="list-wrapper">
-            {this.state.readingList.map((element, index) => {
-              const isEditMode = this.state.editModeId == element.id;
+          {this.state.readingList.map((element, index) => {
+            const isEditMode = this.state.editModeId == element.id;
 
-              return (
+            return (
+              <>
                 <li key={index}>
                   {isEditMode ? (
                     <>
@@ -117,26 +119,26 @@ class App extends React.Component {
                   )}
                   <TrashOutline onClick={() => this.onDeletePress(element)} color={"#00000"} height="25px" width="25px" />
                 </li>
-              );
-            })}
-          </div>
-        </div>
+                <Divider />
+              </>
+            );
+          })}
+        </Col>
 
-        <div className="form">
+        <Col span={8}>
           <h1>Dodaj nową książkę</h1>
-          <label>
-            Książka
-            <input type="text" value={this.state.title} onChange={this.onTitleChange} />
-          </label>
+
+          <Input placeholder="Nazwa Twojej książki" value={this.state.title} onChange={this.onTitleChange} />
+
           {this.state.error ? <div style={{ color: "red" }}>Dodaj tytuł</div> : null}
 
-          <label>
-            Dlaczego warto przeczytać?
-            <textarea value={this.state.description} onChange={this.onDescriptionChange} />
-          </label>
-          <button onClick={this.onAddPress}> Dodaj </button>
-        </div>
-      </div>
+          <Input.TextArea placeholder="Dlaczego warto przeczytać?" value={this.state.description} onChange={this.onDescriptionChange} />
+
+          <Button type="primary" onClick={this.onAddPress}>
+            Dodaj
+          </Button>
+        </Col>
+      </Row>
     );
   }
 }
