@@ -50,13 +50,12 @@ class App extends React.Component {
       <div className="wrapper">
         <div className="list">
           <h1>Moja lista rzeczy do zrobienia</h1>
-
           {this.state.toDoList.length > 0 ? (
             this.state.toDoList.map((listItem, index) => (
               <ListItem
                 key={index}
-                content={listItem.content}
-                title={listItem.title}
+                listItem={listItem}
+                onDeleteClick={this.onDeletePress}
               />
             ))
           ) : (
