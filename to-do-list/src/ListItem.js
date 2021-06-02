@@ -9,7 +9,7 @@ const ListItem = ({ listItem, onDeleteClick }) => {
       <div className="title"> {listItem.title} </div>
       <div className="content"> {listItem.content} </div>
       <TrashOutline
-        onClick={() => onDeleteClick(listItem)}
+        onClick={onDeleteClick}
         color={"#00000"}
         height="25px"
         width="25px"

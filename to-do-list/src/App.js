@@ -55,7 +55,7 @@ class App extends React.Component {
               <ListItem
                 key={index}
                 listItem={listItem}
-                onDeleteClick={this.onDeletePress}
+                onDeleteClick={() => this.onDeletePress(listItem)}
               />
             ))
           ) : (
