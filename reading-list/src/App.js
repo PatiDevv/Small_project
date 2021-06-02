@@ -4,20 +4,45 @@ import React from "react";
 import { TrashOutline } from "react-ionicons";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      description: "",
+      readingList: [
+        {
+          title: "Mobilność i elastyczność w treningu",
+          description:
+            "Dowiesz się o tym w jaki sposób odpowiednio elastyczne mięśnie wypywają na większą wydajność treningu i jego lepsze efekty treningowe.",
+        },
+        {
+          title: "Mobilność i elastyczność w treningu",
+          description:
+            "Dowiesz się o tym w jaki sposób odpowiednio elastyczne mięśnie wypywają na większą wydajność treningu i jego lepsze efekty treningowe.",
+        },
+        {
+          title: "Mobilność i elastyczność w treningu",
+          description:
+            "Dowiesz się o tym w jaki sposób odpowiednio elastyczne mięśnie wypywają na większą wydajność treningu i jego lepsze efekty treningowe.",
+        },
+      ],
+    };
+  }
   render() {
     return (
       <div className="wrapper">
         <div className="list">
           <h1>Lista książek do przeczytania</h1>
+
           <div className="list-wrapper">
-            <ul>
+            {this.state.readingList.map((element) => (
               <li>
                 <input type="checkbox" />
-                <div className="title">Tytuł</div>
-                <div className="opis">Opis</div>
+                <div className="title">{element.title}</div>
+                <div className="opis">{element.description}</div>
                 <TrashOutline color={"#00000"} height="25px" width="25px" />
               </li>
-            </ul>
+            ))}
           </div>
         </div>
 
