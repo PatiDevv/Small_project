@@ -1,10 +1,12 @@
 import React from "react";
-import { Child } from "./Child";
+import { ChildAsFC } from "./Child";
 
 const Parent = () => {
   return (
     <div>
-      <Child color="red" />
+      <ChildAsFC color="red" onClick={() => console.log("cos")}>
+        jhhhh
+      </ChildAsFC>
     </div>
   );
 };
