@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #555;
+  font-family: Roboto Condensed;
+  font-weight: 300;
+  padding: 50px;
+
+  background: #ee9ca7;
+  background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+  height: 100vh; /* wysokość 100% widoku */
+  display: flex;
+  align-items: center; /* wyśrodkowanie wzdłuż osi x */
+  justify-content: center; /* wyśrodkowanie wzdłuż osi y */
+}
+
+.icecream {
+  display: flex;
+  align-items: stretch;
+  /*   margin: 0 0 0 25%; */
+  max-width: 900px;
+  border-radius: 40px;
+  box-shadow: 0px 30px 1000px 10px #fff;
+  overflow: hidden;
+}
+
+.icecream__hero {
+  flex: 0 0 45%;
+}
+
+.icecream__img {
+  width: 100%;
+  display: block;
+}
+
+.icecream__price {
+  background: linear-gradient(to bottom, #ee9ca7, #ffdde1);
+  flex: 0 0 75px;
+
+  color: white;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icecream__content {
+  background: white;
+  flex: 1;
+  padding: 35px 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.icecream__title {
+  display: flex;
+  align-items: center;
+}
+.icecream__heading {
+  font-size: 25x;
+  letter-spacing: 4px;
+  flex: 1;
+  font-weight: 700;
+}
+.icecream__tag {
+  font-size: 14px;
+  color: white;
+  padding: 2px 7px;
+  border-radius: 100px;
+  margin-left: 7px;
+}
+.icecream__tag--1 {
+  background-color: #ee9ca7;
+}
+.icecream__tag--2 {
+  background-color: #ffbbc3;
+}
+
+.icecream__description {
+  font-size: 19px;
+  letter-spacing: 1px;
+  line-height: 30px;
+  margin-top: 50px;
+}
+
+.icon {
+  font-size: 18px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icon-big {
+  margin-right: 5px;
+  color: #ee9ca7;
+  font-size: 25px;
+}
+
+.icecream__details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
+}
+
+.icecream__detail {
+  font-size: 18px;
+  font-weight: 400;
+  margin-right: 15px;
+
+  display: flex;
+  align-items: flex-end;
+}

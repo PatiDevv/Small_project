@@ -2,14 +2,18 @@ import React from "react";
 import ListItem from "./ListItem/ListItem";
 import "../ListWrapper/ListWrapper.css";
 import { DogsList } from "../../data/DogsList";
+import Heading from "../Heading/Heading";
 
 const ListWrapper = () => {
   return (
-    <ul className="listWrapper__wrapper">
-      {DogsList.map((item) => (
-        <ListItem key={item.name} {...item} />
-      ))}
-    </ul>
+    <>
+      <Heading />
+      <ul className="listWrapper__wrapper">
+        {DogsList.map((item) => (
+          <ListItem key={item.name} {...item} />
+        ))}
+      </ul>
+    </>
   );
 };
 
