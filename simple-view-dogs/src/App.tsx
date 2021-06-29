@@ -3,7 +3,7 @@ import "./index.css";
 import ListWrapper from "./components/ListWrapper/ListWrapper";
 
 function App() {
-  return <ListWrapper></ListWrapper>;
+  return <ListWrapper/>;
 }
 
 export default App;
